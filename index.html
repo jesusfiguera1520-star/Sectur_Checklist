@@ -40,7 +40,6 @@
 
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px 96px;}
 
-  /* ---------- Header ---------- */
   .topbar{
     background:linear-gradient(135deg,var(--blue-900) 0%,var(--blue-800) 55%,var(--blue-700) 100%);
     color:#fff;
@@ -91,7 +90,6 @@
     white-space:nowrap;
   }
 
-  /* ---------- Month tabs ---------- */
   .month-bar{
     position:relative;z-index:3;
     max-width:1180px;margin:0 auto;padding:0 24px;
@@ -138,7 +136,6 @@
   }
   .month-tab-add:hover{background:rgba(255,255,255,0.18);}
 
-  /* ---------- Stats ---------- */
   .stats{
     display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
     margin-top:22px;position:relative;z-index:2;
@@ -158,7 +155,6 @@
   .stat-card.pend .bar{background:var(--red-100);}
   .stat-card.pend .bar > div{background:var(--red-600);}
 
-  /* ---------- Toolbar ---------- */
   .toolbar{
     margin-top:26px;
     display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;
@@ -189,7 +185,6 @@
   .btn-text{background:none;border:none;color:var(--muted);font-weight:600;font-size:13px;padding:6px 8px;border-radius:8px;}
   .btn-text:hover{background:var(--bg);color:var(--ink);}
 
-  /* ---------- Categories ---------- */
   .cat-list{margin-top:22px;display:flex;flex-direction:column;gap:14px;}
   .cat-card{
     background:var(--surface);
@@ -231,24 +226,6 @@
     padding:18px 20px 22px;
   }
   .cat-card.open .cat-body{display:block;}
-
-  .cat-template-box{
-    background:var(--blue-50);
-    border:1px dashed var(--blue-100);
-    border-radius:12px;
-    padding:12px 14px;
-    margin-bottom:16px;
-  }
-  .cat-template-box label{
-    font-size:12px;font-weight:700;color:var(--blue-800);text-transform:none;
-    display:flex;align-items:center;justify-content:space-between;
-  }
-  .cat-template-box textarea{
-    width:100%;margin-top:8px;border:1px solid var(--border);border-radius:8px;
-    padding:9px 11px;font-size:13.5px;color:var(--ink-soft);resize:vertical;min-height:56px;
-    background:#fff;
-  }
-  .cat-template-box textarea:focus{outline:2px solid var(--blue-600);}
 
   .items-head-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
   .items-head-row h4{margin:0;font-size:13px;font-weight:700;color:var(--muted);}
@@ -297,16 +274,49 @@
   .badge-wa{background:var(--blue-100);color:var(--blue-800);}
   .badge-email{background:#EDEEF1;color:var(--ink-soft);}
 
-  .item-template-toggle{
-    font-size:12.5px;font-weight:700;color:var(--blue-700);background:none;border:none;padding:2px 0;
-    text-align:left;
+  .contact-badges{display:flex;gap:6px;flex-wrap:wrap;}
+
+  .item-observation{
+    background:var(--bg);border-radius:10px;padding:8px 12px;
+    font-size:13px;color:var(--ink-soft);white-space:pre-wrap;
   }
-  .item-template-box{
-    display:none;
-    background:var(--bg);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--ink-soft);
-    white-space:pre-wrap;
+  .obs-label{font-size:11px;color:var(--muted);font-weight:700;margin-bottom:2px;text-transform:uppercase;}
+
+  .item-attachments{display:flex;flex-wrap:wrap;gap:6px;}
+  .attachment-chip{
+    display:inline-flex;align-items:center;gap:5px;
+    background:var(--blue-50);border:1px solid var(--blue-100);
+    border-radius:8px;padding:5px 10px;font-size:12px;font-weight:600;
+    color:var(--blue-800);cursor:pointer;transition:background .12s;
+    text-decoration:none;
   }
-  .item-row.tpl-open .item-template-box{display:block;}
+  .attachment-chip:hover{background:var(--blue-100);}
+  .attachment-chip svg{flex-shrink:0;}
+  .attachment-chip .att-size{color:var(--muted);font-weight:500;margin-left:2px;}
+
+  .files-upload-zone{
+    border:2px dashed var(--border);border-radius:10px;padding:16px;
+    text-align:center;cursor:pointer;transition:border-color .15s,background .15s;
+    position:relative;
+  }
+  .files-upload-zone:hover{border-color:var(--blue-600);background:var(--blue-50);}
+  .files-upload-zone input[type=file]{
+    position:absolute;inset:0;opacity:0;cursor:pointer;
+  }
+  .fu-icon{color:var(--blue-100);margin-bottom:6px;}
+  .fu-label{font-size:13px;color:var(--ink-soft);font-weight:600;}
+  .fu-hint{font-size:11.5px;color:var(--muted);margin-top:4px;}
+
+  .files-list{margin-top:8px;display:flex;flex-direction:column;gap:6px;}
+  .file-item{
+    display:flex;align-items:center;gap:8px;
+    background:var(--bg);border-radius:8px;padding:6px 10px;font-size:12.5px;
+  }
+  .file-item .file-icon{color:var(--blue-700);flex-shrink:0;}
+  .file-item .file-name{flex:1;font-weight:600;color:var(--ink-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .file-item .file-size{color:var(--muted);font-weight:500;white-space:nowrap;}
+  .file-item .file-remove{background:none;border:none;color:var(--muted);cursor:pointer;padding:2px 4px;border-radius:4px;font-size:16px;line-height:1;}
+  .file-item .file-remove:hover{color:var(--red-600);background:var(--red-100);}
 
   .empty-state{
     text-align:center;padding:56px 20px;color:var(--muted);
@@ -317,7 +327,6 @@
   .empty-state h3{color:var(--ink);margin:0 0 6px;font-size:16px;}
   .empty-state p{margin:0 0 16px;font-size:13.5px;max-width:360px;margin-left:auto;margin-right:auto;}
 
-  /* ---------- Modal ---------- */
   .modal-overlay{
     position:fixed;inset:0;background:rgba(8,20,45,0.55);
     display:none;align-items:center;justify-content:center;padding:20px;z-index:50;
@@ -356,6 +365,12 @@
   .modal-foot{display:flex;justify-content:flex-end;gap:10px;padding:4px 24px 24px;}
   .confirm-body{padding:6px 24px 22px;color:var(--ink-soft);font-size:14px;}
 
+  .section-label{
+    font-size:12px;font-weight:700;color:var(--blue-800);
+    text-transform:uppercase;letter-spacing:0.03em;
+    padding-bottom:4px;border-bottom:1px solid var(--blue-100);margin-top:4px;
+  }
+
   @media (max-width:720px){
     .stats{grid-template-columns:repeat(2,1fr);}
     .topbar-inner{padding:26px 20px 20px;}
@@ -367,13 +382,28 @@
 
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
   :focus-visible{outline:2px solid var(--blue-600);outline-offset:2px;}
-</style>
 
-<!-- Firebase (sincronização entre usuários/computadores) -->
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  .setup-banner{
+    background:#FFF6DB;border-bottom:1px solid #F0DA9E;color:#6B4E00;
+    font-size:13.5px;padding:10px 24px;
+    display:none;align-items:center;justify-content:center;gap:10px;text-align:center;flex-wrap:wrap;
+  }
+  .setup-banner.show{display:flex;}
+  .setup-banner b{font-weight:800;}
+  .setup-banner .sb-close{
+    background:none;border:none;color:#6B4E00;font-weight:800;cursor:pointer;padding:2px 6px;
+  }
+  .sync-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#F5C542;}
+  .sync-dot.on{background:#3FC97A;}
+  .sync-dot.off{background:rgba(255,255,255,0.5);}
+</style>
 </head>
 <body>
+
+<div class="setup-banner" id="setupBanner">
+  <span>&#9888;&#65039; <b>Firebase não configurado.</b> Os dados estão sendo salvos apenas neste navegador. Configure a sincronização em tempo real editando as constantes no início do &lt;script&gt; do arquivo (procure por "firebaseConfig").</span>
+  <button class="sb-close" id="closeSetupBanner" title="Fechar aviso">&#10005;</button>
+</div>
 
 <div class="topbar">
   <div class="topbar-inner">
@@ -388,7 +418,7 @@
         <p>Gestão de solicitações de relatórios setoriais · Blumenau/SC</p>
       </div>
     </div>
-    <div class="topbar-tag" id="lastSavedTag">Dados salvos automaticamente</div>
+    <div class="topbar-tag" id="lastSavedTag"><span class="sync-dot" id="syncDot"></span>Dados salvos automaticamente</div>
   </div>
   <div class="month-bar" id="monthBar"></div>
 </div>
@@ -438,10 +468,6 @@
         <label for="catNameInput">Nome da categoria</label>
         <input type="text" id="catNameInput" placeholder="Ex.: Hotéis">
       </div>
-      <div class="form-group">
-        <label for="catTemplateInput">Modelo padrão de mensagem (usado como sugestão para os itens desta categoria)</label>
-        <textarea id="catTemplateInput" placeholder="Prezado(a), o Observatório Nacional de Turismo solicita o envio do relatório referente a..."></textarea>
-      </div>
     </div>
     <div class="modal-foot">
       <button class="btn btn-ghost" data-close-modal="modalCategory">Cancelar</button>
@@ -478,28 +504,35 @@
         <input type="date" id="itemDateInput">
       </div>
 
+      <div class="section-label">Contatos</div>
+
       <div class="form-group">
-        <label>Meio de contato preferido</label>
-        <div class="radio-group">
-          <label class="radio-opt" id="optWhatsapp">
-            <input type="radio" name="contactMethod" value="whatsapp">
-            WhatsApp
-          </label>
-          <label class="radio-opt" id="optEmail">
-            <input type="radio" name="contactMethod" value="email">
-            E-mail
-          </label>
+        <label for="itemWhatsappInput">Número de WhatsApp (opcional)</label>
+        <input type="text" id="itemWhatsappInput" placeholder="(47) 9 9999-9999">
+      </div>
+
+      <div class="form-group">
+        <label for="itemEmailInput">Endereço de e-mail (opcional)</label>
+        <input type="text" id="itemEmailInput" placeholder="contato@exemplo.com.br">
+      </div>
+
+      <div class="form-group">
+        <label for="itemObservationInput">Observação</label>
+        <textarea id="itemObservationInput" placeholder="Anotações sobre este item..."></textarea>
+      </div>
+
+      <div class="section-label">Anexos</div>
+
+      <div class="form-group">
+        <div class="files-upload-zone" id="filesUploadZone">
+          <input type="file" id="itemFilesInput" multiple accept=".xlsx,.xls,.csv,.txt">
+          <div class="fu-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="fu-label">Clique ou arraste arquivos aqui</div>
+          <div class="fu-hint">Excel (.xlsx), CSV (.csv) ou TXT — máx. 2 MB por arquivo</div>
         </div>
-      </div>
-
-      <div class="form-group">
-        <label for="itemContactInput" id="itemContactLabel">Número de WhatsApp</label>
-        <input type="text" id="itemContactInput" placeholder="(47) 9 9999-9999">
-      </div>
-
-      <div class="form-group">
-        <label for="itemTemplateInput">Modelo de mensagem para este item (opcional — se vazio, usa o modelo da categoria)</label>
-        <textarea id="itemTemplateInput" placeholder="Deixe em branco para usar o modelo padrão da categoria..."></textarea>
+        <div class="files-list" id="pendingFilesList"></div>
       </div>
     </div>
     <div class="modal-foot">
@@ -529,7 +562,7 @@
           <input type="radio" name="monthSource" value="copy" checked>
           <div>
             <div class="rt">Copiar categorias e itens do mês anterior</div>
-            <div class="rd">Mantém nomes, contatos e modelos de mensagem; reinicia o status de cada item para "Não solicitado" e limpa a data de início.</div>
+            <div class="rd">Mantém nomes, contatos, observações e anexos; reinicia o status de cada item para "Não solicitado" e limpa a data de início.</div>
           </div>
         </label>
         <label class="radio-opt-col" id="optEmptyMonth">
@@ -584,24 +617,92 @@
   </div>
 </div>
 
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
 <script>
 (function(){
   "use strict";
 
+  var firebaseConfig = {
+    apiKey: "SUA_API_KEY_AQUI",
+    authDomain: "SEU_PROJETO.firebaseapp.com",
+    projectId: "SEU_PROJETO",
+    storageBucket: "SEU_PROJETO.appspot.com",
+    messagingSenderId: "SEU_SENDER_ID",
+    appId: "SEU_APP_ID"
+  };
+  var FIRESTORE_COLLECTION = "observatorio_turismo";
+  var FIRESTORE_DOC = "estado_compartilhado";
+
   var STORAGE_KEY = "observatorio-turismo-data";
   var MONTH_NAMES_PT = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+  var MAX_FILE_SIZE = 2 * 1024 * 1024;
+
+  var hasArtifactStorage = (typeof window.storage !== "undefined" && window.storage && typeof window.storage.get === "function");
+  var storageAdapter = hasArtifactStorage ? window.storage : {
+    get: function(key){
+      return new Promise(function(resolve, reject){
+        try{
+          var raw = window.localStorage.getItem(key);
+          if(raw === null){ reject(new Error("Nenhum dado salvo ainda")); return; }
+          resolve({ key: key, value: raw, shared: false });
+        }catch(e){ reject(e); }
+      });
+    },
+    set: function(key, value){
+      return new Promise(function(resolve, reject){
+        try{
+          window.localStorage.setItem(key, value);
+          resolve({ key: key, value: value, shared: false });
+        }catch(e){ reject(e); }
+      });
+    }
+  };
+
+  var db = null;
+  var firebaseReady = false;
+  var lastPushedJson = null;
+  var firestoreFirstLoad = true;
+
+  function isFirebaseConfigured(){
+    return firebaseConfig.apiKey && firebaseConfig.apiKey.indexOf("SUA_") !== 0 &&
+           firebaseConfig.projectId && firebaseConfig.projectId.indexOf("SEU_") !== 0;
+  }
+
+  function initFirebase(){
+    if(!isFirebaseConfigured()) return false;
+    if(typeof firebase === "undefined") return false;
+    try{
+      firebase.initializeApp(firebaseConfig);
+      db = firebase.firestore();
+      try{ db.enablePersistence({ synchronizeTabs: true }).catch(function(){}); }catch(e){}
+      firebaseReady = true;
+      return true;
+    }catch(e){
+      console.error("Erro ao iniciar Firebase:", e);
+      return false;
+    }
+  }
+
+  function setSyncStatus(mode, text){
+    var dot = document.getElementById("syncDot");
+    var tag = document.getElementById("lastSavedTag");
+    if(dot) dot.className = "sync-dot " + mode;
+    if(tag && tag.lastChild) tag.lastChild.textContent = text;
+  }
 
   var state = { months: [], activeMonthId: null };
   var ui = { expanded: {}, search: "", statusFilter: "todos", contactFilter: "todos" };
   var editingCategoryId = null;
-  var editingItem = null; // { categoryId, itemId }
+  var editingItem = null;
   var renamingMonthId = null;
   var confirmCallback = null;
+  var pendingAttachments = [];
 
   function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
 
   function labelForMonthValue(val){
-    // val is "YYYY-MM"
     var parts = val.split("-");
     var y = parts[0], m = parseInt(parts[1], 10) - 1;
     return MONTH_NAMES_PT[m] + " " + y;
@@ -613,38 +714,58 @@
     return d.getFullYear() + "-" + m;
   }
 
+  function formatFileSize(bytes){
+    if(bytes < 1024) return bytes + " B";
+    if(bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB";
+    return (bytes / 1048576).toFixed(1) + " MB";
+  }
+
+  function downloadAttachment(att){
+    var parts = att.data.split(",");
+    var mime = parts[0].match(/:(.*?);/)[1];
+    var bstr = atob(parts[1]);
+    var n = bstr.length;
+    var u8arr = new Uint8Array(n);
+    while(n--) u8arr[n] = bstr.charCodeAt(n);
+    var blob = new Blob([u8arr], {type: mime});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = att.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
   function seedCategories(){
     return [
       {
         id: uid(), name: "Hotéis",
-        template: "Prezado(a) gestor(a),\n\nO Observatório Nacional de Turismo solicita o envio do relatório de ocupação e desempenho referente ao período vigente.\n\nAtenciosamente,\nObservatório Nacional de Turismo",
         items: [
-          { id: uid(), name: "Hotel Plaza Blumenau", requested: true, availableDate: "2026-01-05", contactMethod: "email", contactInfo: "contato@hotelplazablumenau.com.br", template: "" },
-          { id: uid(), name: "Hotel Glória", requested: false, availableDate: "2026-09-15", contactMethod: "whatsapp", contactInfo: "(47) 99999-1122", template: "" },
-          { id: uid(), name: "Blumenau Tower Hotel", requested: false, availableDate: "2026-10-01", contactMethod: "email", contactInfo: "reservas@blumenautower.com.br", template: "" }
+          { id: uid(), name: "Hotel Plaza Blumenau", requested: true, availableDate: "2026-01-05", whatsappInfo: "", emailInfo: "contato@hotelplazablumenau.com.br", observation: "", attachments: [] },
+          { id: uid(), name: "Hotel Glória", requested: false, availableDate: "2026-09-15", whatsappInfo: "(47) 99999-1122", emailInfo: "", observation: "", attachments: [] },
+          { id: uid(), name: "Blumenau Tower Hotel", requested: false, availableDate: "2026-10-01", whatsappInfo: "", emailInfo: "reservas@blumenautower.com.br", observation: "", attachments: [] }
         ]
       },
       {
         id: uid(), name: "Museus",
-        template: "Prezado(a) responsável,\n\nSolicitamos os dados de visitação do último trimestre para fins do relatório setorial do Observatório Nacional de Turismo.\n\nAtenciosamente.",
         items: [
-          { id: uid(), name: "Museu da Família Colonial", requested: true, availableDate: "2026-02-01", contactMethod: "email", contactInfo: "museu@blumenau.sc.gov.br", template: "" },
-          { id: uid(), name: "Museu de Ecologia", requested: false, availableDate: "2026-11-10", contactMethod: "whatsapp", contactInfo: "(47) 98888-3344", template: "" }
+          { id: uid(), name: "Museu da Família Colonial", requested: true, availableDate: "2026-02-01", whatsappInfo: "", emailInfo: "museu@blumenau.sc.gov.br", observation: "", attachments: [] },
+          { id: uid(), name: "Museu de Ecologia", requested: false, availableDate: "2026-11-10", whatsappInfo: "(47) 98888-3344", emailInfo: "", observation: "", attachments: [] }
         ]
       },
       {
         id: uid(), name: "Restaurantes",
-        template: "Prezado(a),\n\nSolicitamos informações sobre o fluxo de atendimento e faturamento estimado do período para composição do relatório do Observatório.\n\nAgradecemos a colaboração.",
         items: [
-          { id: uid(), name: "Cervejaria Bierland", requested: false, availableDate: "2026-09-20", contactMethod: "whatsapp", contactInfo: "(47) 99777-5566", template: "" },
-          { id: uid(), name: "Restaurante Frohsinn", requested: false, availableDate: "2026-10-05", contactMethod: "email", contactInfo: "contato@frohsinn.com.br", template: "" }
+          { id: uid(), name: "Cervejaria Bierland", requested: false, availableDate: "2026-09-20", whatsappInfo: "(47) 99777-5566", emailInfo: "", observation: "", attachments: [] },
+          { id: uid(), name: "Restaurante Frohsinn", requested: false, availableDate: "2026-10-05", whatsappInfo: "", emailInfo: "contato@frohsinn.com.br", observation: "", attachments: [] }
         ]
       },
       {
         id: uid(), name: "Agências de Viagens",
-        template: "Prezado(a) parceiro(a),\n\nO Observatório Nacional de Turismo solicita o relatório de pacotes e destinos comercializados no período de referência.\n\nAtenciosamente.",
         items: [
-          { id: uid(), name: "Blumenau Turismo Receptivo", requested: true, availableDate: "2026-01-20", contactMethod: "email", contactInfo: "comercial@blumenauturismo.com.br", template: "" }
+          { id: uid(), name: "Blumenau Turismo Receptivo", requested: true, availableDate: "2026-01-20", whatsappInfo: "", emailInfo: "comercial@blumenauturismo.com.br", observation: "", attachments: [] }
         ]
       }
     ];
@@ -663,16 +784,16 @@
       return {
         id: uid(),
         name: cat.name,
-        template: cat.template || "",
         items: cat.items.map(function(it){
           return {
             id: uid(),
             name: it.name,
             requested: false,
             availableDate: "",
-            contactMethod: it.contactMethod,
-            contactInfo: it.contactInfo,
-            template: it.template || ""
+            whatsappInfo: it.whatsappInfo || "",
+            emailInfo: it.emailInfo || "",
+            observation: it.observation || "",
+            attachments: (it.attachments || []).map(function(f){ return { name: f.name, type: f.type, size: f.size, data: f.data }; })
           };
         })
       };
@@ -696,182 +817,151 @@
     return parts[2] + "/" + parts[1] + "/" + parts[0];
   }
 
-  /* ---------------- Persistence ---------------- */
   function migrateIfNeeded(parsed){
     if(parsed && Array.isArray(parsed.months) && parsed.months.length){
+      parsed.months.forEach(function(mo){
+        mo.categories.forEach(function(cat){
+          delete cat.template;
+          cat.items.forEach(function(it){
+            if(typeof it.whatsappInfo === "undefined"){
+              it.whatsappInfo = (it.contactMethod === "whatsapp") ? (it.contactInfo || "") : "";
+            }
+            if(typeof it.emailInfo === "undefined"){
+              it.emailInfo = (it.contactMethod === "email") ? (it.contactInfo || "") : "";
+            }
+            delete it.contactMethod;
+            delete it.contactInfo;
+            if(typeof it.observation === "undefined"){
+              it.observation = it.template || "";
+            }
+            delete it.template;
+            if(!Array.isArray(it.attachments)) it.attachments = [];
+          });
+        });
+      });
       return parsed;
     }
     if(parsed && Array.isArray(parsed.categories)){
-      // formato antigo (sem meses) -> envolve em um único mês
       var monthId = uid();
-      return {
+      var migrated = {
         months: [ { id: monthId, label: labelForMonthValue(currentMonthValue()), monthValue: currentMonthValue(), categories: parsed.categories } ],
         activeMonthId: monthId
       };
+      return migrateIfNeeded(migrated);
     }
     return null;
   }
 
-  /* =====================================================================
-     SINCRONIZAÇÃO ENTRE USUÁRIOS (Firebase Firestore — gratuito)
-     =====================================================================
-     1. Vá em https://console.firebase.google.com/ → crie um projeto novo
-        (gratuito, sem cartão de crédito).
-     2. No menu lateral, abra "Firestore Database" → "Criar banco de
-        dados" → escolha "Iniciar em modo de teste".
-     3. Em "Regras" (Rules) do Firestore, use temporariamente:
-          allow read, write: if true;
-        (funciona para uso interno simples entre poucas pessoas; não
-        exponha isso para o público em geral).
-     4. No ícone de engrenagem → "Configurações do projeto" → role até
-        "Seus aplicativos" → clique no ícone "</>" (Web) → registre um
-        app → copie o objeto "firebaseConfig" que aparece e cole abaixo,
-        no lugar dos valores de exemplo.
-     Enquanto USE_FIREBASE estiver como true mas a configuração não for
-     substituída, o app cai automaticamente para localStorage (só
-     funciona no próprio navegador) e avisa no console. */
-  var USE_FIREBASE = true;
-
-  var firebaseConfig = {
-    apiKey: "AIzaSyA-vuqrpgzUHfITIcGBwCNqxv51OF2AoUM",
-    authDomain: "sectur-ccc07.firebaseapp.com",
-    projectId: "sectur-ccc07",
-    storageBucket: "sectur-ccc07.firebasestorage.app",
-    messagingSenderId: "613809299539",
-    appId: "1:613809299539:web:0cfb218840a955647466a6",
-    measurementId: "G-H606H7BXN8"
-  };
-
-  var firebaseReady = false;
-  var docRef = null;
-  if(USE_FIREBASE && firebaseConfig.apiKey && firebaseConfig.apiKey.indexOf("COLE_AQUI") === -1){
-    try{
-      firebase.initializeApp(firebaseConfig);
-      docRef = firebase.firestore().collection("observatorio-turismo").doc("dados");
-      firebaseReady = true;
-    }catch(e){
-      console.error("Falha ao iniciar o Firebase, usando armazenamento local:", e);
-    }
-  } else if(USE_FIREBASE){
-    console.warn("firebaseConfig ainda não foi preenchido — usando armazenamento local (sem sincronizar entre computadores). Veja as instruções no início deste bloco de script.");
-  }
-
-  /* Armazenamento local no navegador (localStorage) — usado como
-     alternativa quando o Firebase não está configurado, ou se
-     USE_FIREBASE = false. Os dados ficam salvos só neste navegador. */
-  var localStore = {
-    get: function(key){
-      return new Promise(function(resolve, reject){
-        try{
-          var raw = window.localStorage.getItem(key);
-          resolve(raw === null ? null : { value: raw });
-        }catch(e){ reject(e); }
-      });
-    },
-    set: function(key, value){
-      return new Promise(function(resolve, reject){
-        try{
-          window.localStorage.setItem(key, value);
-          resolve({ value: value });
-        }catch(e){ reject(e); }
-      });
-    }
-  };
-
-  var pendingRemoteState = undefined; // atualização remota chegando enquanto o usuário digitava
-  var firstLoadDone = false;
-
-  function applyIncomingData(loadedRaw){
-    var loaded = null;
-    if(loadedRaw){
-      try{ loaded = migrateIfNeeded(loadedRaw); }
-      catch(e){ console.error("Falha ao ler dados recebidos:", e); }
-    }
-    var isFirstEverLoad = !firstLoadDone;
-    firstLoadDone = true;
-    state = loaded || seedData();
+  function applyLoadedState(parsedOrNull){
+    state = parsedOrNull || seedData();
     if(!state.months.find(function(m){ return m.id === state.activeMonthId; })){
       state.activeMonthId = state.months[0].id;
     }
     state.months.forEach(function(mo){
-      mo.categories.forEach(function(c){
-        if(ui.expanded[c.id] === undefined) ui.expanded[c.id] = true;
-      });
+      mo.categories.forEach(function(c){ ui.expanded[c.id] = true; });
     });
-    render();
-    // Se era a primeiríssima vez (banco vazio), grava os dados de exemplo
-    // para que o próximo usuário que abrir já veja os mesmos dados.
-    if(isFirstEverLoad && !loaded){ saveData(); }
+  }
+
+  function readLocalCache(){
+    try{
+      var raw = window.localStorage.getItem(STORAGE_KEY);
+      if(raw) return migrateIfNeeded(JSON.parse(raw));
+    }catch(e){}
+    return null;
+  }
+
+  function writeLocalCache(json){
+    try{ window.localStorage.setItem(STORAGE_KEY, json); }catch(e){}
   }
 
   function loadData(){
-    if(firebaseReady && docRef){
-      docRef.onSnapshot(function(snap){
-        if(snap.metadata.hasPendingWrites) return; // é a nossa própria escrita, já refletida na tela
-        var data = snap.exists ? snap.data() : null;
-        var incoming = data && data.state ? data.state : null;
-        var isTyping = document.activeElement && (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName === "INPUT");
-        if(isTyping && firstLoadDone){
-          pendingRemoteState = incoming; // aplica depois que o usuário sair do campo
-          var tag = document.getElementById("lastSavedTag");
-          if(tag) tag.textContent = "Há atualizações de outro usuário (serão aplicadas ao sair do campo)";
-          return;
-        }
-        applyIncomingData(incoming);
-      }, function(err){
-        console.error("Erro de sincronização com o Firebase:", err);
-        var tag = document.getElementById("lastSavedTag");
-        if(tag) tag.textContent = "Erro de conexão — verifique sua internet";
-      });
-    } else {
-      localStore.get(STORAGE_KEY).then(function(res){
-        applyIncomingData(res && res.value ? JSON.parse(res.value) : null);
-      }).catch(function(err){
-        console.error("Sem dados salvos ainda, iniciando com exemplo:", err);
-        applyIncomingData(null);
-      });
+    var banner = document.getElementById("setupBanner");
+
+    if(initFirebase()){
+      if(banner) banner.classList.remove("show");
+      subscribeFirestore();
+      return;
     }
+
+    if(banner) banner.classList.add("show");
+    setSyncStatus("off", "Modo local (Firebase não configurado)");
+
+    storageAdapter.get(STORAGE_KEY, false).then(function(res){
+      var loaded = res && res.value ? migrateIfNeeded(JSON.parse(res.value)) : null;
+      applyLoadedState(loaded);
+      render();
+    }).catch(function(err){
+      console.error("Sem dados salvos ainda, iniciando com exemplo:", err);
+      applyLoadedState(null);
+      render();
+    });
   }
 
-  // Aplica atualização remota pendente assim que o usuário sai de um
-  // campo de texto (evita perder o que ele está digitando no meio).
-  document.addEventListener("focusout", function(e){
-    if(pendingRemoteState !== undefined && (e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT")){
-      setTimeout(function(){
-        if(pendingRemoteState !== undefined){
-          var toApply = pendingRemoteState;
-          pendingRemoteState = undefined;
-          applyIncomingData(toApply);
+  function subscribeFirestore(){
+    setSyncStatus("wait", "Conectando em tempo real...");
+    var docRef = db.collection(FIRESTORE_COLLECTION).doc(FIRESTORE_DOC);
+
+    docRef.onSnapshot(function(snap){
+      var incomingJson = (snap.exists && snap.data()) ? snap.data().payload : null;
+
+      if(incomingJson){
+        if(incomingJson === lastPushedJson){
+          setSyncStatus("on", "Sincronizado em tempo real");
+          firestoreFirstLoad = false;
+          return;
         }
-      }, 300);
-    }
-  }, true);
+        try{
+          var parsed = migrateIfNeeded(JSON.parse(incomingJson));
+          applyLoadedState(parsed);
+          writeLocalCache(incomingJson);
+          render();
+        }catch(e){ console.error("Erro ao interpretar dados do Firebase:", e); }
+      } else if(firestoreFirstLoad){
+        applyLoadedState(readLocalCache());
+        var initialJson = JSON.stringify(state);
+        lastPushedJson = initialJson;
+        docRef.set({ payload: initialJson, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+        writeLocalCache(initialJson);
+        render();
+      }
+      firestoreFirstLoad = false;
+      setSyncStatus("on", "Sincronizado em tempo real");
+    }, function(err){
+      console.error("Erro de conexão com o Firebase:", err);
+      setSyncStatus("off", "Sem conexão — usando cópia local");
+      applyLoadedState(readLocalCache());
+      render();
+    });
+  }
 
   var saveTimer = null;
   function saveData(){
-    var tag = document.getElementById("lastSavedTag");
-    if(tag) tag.textContent = "Salvando...";
+    setSyncStatus(firebaseReady ? "wait" : "wait", "Salvando...");
     clearTimeout(saveTimer);
     saveTimer = setTimeout(function(){
-      if(firebaseReady && docRef){
-        docRef.set({ state: state, updatedAt: Date.now() }).then(function(){
-          if(tag) tag.textContent = "Sincronizado";
-        }).catch(function(err){
-          console.error("Erro ao salvar no Firebase:", err);
-          if(tag) tag.textContent = "Falha ao salvar (verifique a conexão)";
-        });
+      var json = JSON.stringify(state);
+      writeLocalCache(json);
+
+      if(firebaseReady){
+        lastPushedJson = json;
+        db.collection(FIRESTORE_COLLECTION).doc(FIRESTORE_DOC)
+          .set({ payload: json, updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
+          .then(function(){ setSyncStatus("on", "Sincronizado em tempo real"); })
+          .catch(function(err){
+            console.error("Erro ao sincronizar com o Firebase:", err);
+            setSyncStatus("off", "Falha ao sincronizar (cópia local salva)");
+          });
       } else {
-        localStore.set(STORAGE_KEY, JSON.stringify(state)).then(function(res){
-          if(tag) tag.textContent = res ? "Dados salvos automaticamente" : "Falha ao salvar";
+        storageAdapter.set(STORAGE_KEY, json, false).then(function(res){
+          setSyncStatus("off", res ? "Dados salvos automaticamente" : "Falha ao salvar");
         }).catch(function(err){
           console.error("Erro ao salvar:", err);
-          if(tag) tag.textContent = "Falha ao salvar (dados mantidos nesta sessão)";
+          setSyncStatus("off", "Falha ao salvar (dados mantidos nesta sessão)");
         });
       }
     }, 250);
   }
 
-  /* ---------------- Derived data / filtering ---------------- */
   function getFilteredCategories(){
     var month = getActiveMonth();
     var q = ui.search.trim().toLowerCase();
@@ -882,7 +972,9 @@
         var statusMatch = ui.statusFilter === "todos" ||
           (ui.statusFilter === "pendente" && !it.requested) ||
           (ui.statusFilter === "solicitado" && it.requested);
-        var contactMatch = ui.contactFilter === "todos" || it.contactMethod === ui.contactFilter;
+        var contactMatch = ui.contactFilter === "todos" ||
+          (ui.contactFilter === "whatsapp" && it.whatsappInfo) ||
+          (ui.contactFilter === "email" && it.emailInfo);
         return textMatch && statusMatch && contactMatch;
       });
       return { cat: cat, items: items, catMatches: catMatches };
@@ -902,7 +994,6 @@
     return { totalCategories: totalCategories, totalItems: totalItems, pending: pending, done: done };
   }
 
-  /* ---------------- Rendering ---------------- */
   function render(){
     renderMonthTabs();
     renderStats();
@@ -972,8 +1063,7 @@
       return;
     }
 
-    var searchText = ui.search.trim();
-    var hasAnyResult = filtered.some(function(e){ return e.items.length > 0 || (searchText !== "" && e.catMatches); });
+    var hasAnyResult = filtered.some(function(e){ return e.items.length > 0; });
     if(!hasAnyResult && isFiltering){
       host.innerHTML =
         '<div class="empty-state">' +
@@ -987,14 +1077,7 @@
     host.innerHTML = month.categories.map(function(cat){
       var entry = filtered.filter(function(e){ return e.cat.id === cat.id; })[0];
       var visibleItems = entry ? entry.items : [];
-      // Uma categoria bate pelo nome só conta quando existe texto de busca
-      // (senão toda categoria "bateria" com uma busca vazia).
-      var catNameMatches = (ui.search.trim() !== "" && entry) ? entry.catMatches : false;
-      // Uma categoria some da lista filtrada só se NÃO tiver itens visíveis
-      // E o nome da própria categoria também não bater com a busca — assim
-      // categorias recém-criadas (ainda sem itens) continuam aparecendo
-      // quando você procura pelo nome delas.
-      if(isFiltering && visibleItems.length === 0 && !catNameMatches) return "";
+      if(isFiltering && visibleItems.length === 0) return "";
 
       var itemsToRender = isFiltering ? visibleItems : cat.items;
       var pendCount = cat.items.filter(function(i){ return !i.requested; }).length;
@@ -1019,10 +1102,6 @@
             '</button>' +
           '</div>' +
           '<div class="cat-body">' +
-            '<div class="cat-template-box">' +
-              '<label>Modelo padrão da categoria (usado quando o item não tem modelo próprio)</label>' +
-              '<textarea data-action="cat-template" placeholder="Escreva o modelo padrão de mensagem para esta categoria...">' + escapeHtml(cat.template || "") + '</textarea>' +
-            '</div>' +
             '<div class="items-head-row">' +
               '<h4>ITENS DA CATEGORIA</h4>' +
               '<button class="btn btn-ghost" data-action="new-item" style="padding:7px 12px;font-size:13px;">' +
@@ -1040,12 +1119,51 @@
   }
 
   function renderItem(cat, it){
-    var contactBadge = it.contactMethod === "whatsapp"
-      ? '<span class="badge-contact badge-wa"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 1 1-3.8-6.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 4l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> WhatsApp</span>'
-      : '<span class="badge-contact badge-email"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8"/></svg> E-mail</span>';
+    var contactBadges = "";
+    if(it.whatsappInfo && it.emailInfo){
+      contactBadges =
+        '<span class="badge-contact badge-wa"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 1 1-3.8-6.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 4l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> WhatsApp</span>' +
+        '<span class="badge-contact badge-email"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8"/></svg> E-mail</span>';
+    } else if(it.whatsappInfo){
+      contactBadges = '<span class="badge-contact badge-wa"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 1 1-3.8-6.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 4l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> WhatsApp</span>';
+    } else if(it.emailInfo){
+      contactBadges = '<span class="badge-contact badge-email"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8"/></svg> E-mail</span>';
+    } else {
+      contactBadges = '<span style="font-size:12px;color:var(--muted);">—</span>';
+    }
 
-    var effectiveTemplate = (it.template && it.template.trim()) ? it.template : (cat.template || "");
-    var usingFallback = !(it.template && it.template.trim());
+    var contactDetails = "";
+    if(it.whatsappInfo){
+      contactDetails += '<div class="meta-block"><div class="k">WHATSAPP</div><div class="v">' + escapeHtml(it.whatsappInfo) + '</div></div>';
+    }
+    if(it.emailInfo){
+      contactDetails += '<div class="meta-block"><div class="k">E-MAIL</div><div class="v">' + escapeHtml(it.emailInfo) + '</div></div>';
+    }
+
+    var obsSection = "";
+    if(it.observation && it.observation.trim()){
+      obsSection =
+        '<div class="item-observation">' +
+          '<div class="obs-label">Observação</div>' +
+          escapeHtml(it.observation) +
+        '</div>';
+    }
+
+    var attachSection = "";
+    var atts = it.attachments || [];
+    if(atts.length > 0){
+      var chips = atts.map(function(att, idx){
+        var sizeStr = att.size ? formatFileSize(att.size) : "";
+        return (
+          '<span class="attachment-chip" data-action="download-attachment" data-attach-idx="' + idx + '" title="Baixar ' + escapeHtml(att.name) + '">' +
+            '<svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+            escapeHtml(att.name) +
+            (sizeStr ? '<span class="att-size">(' + sizeStr + ')</span>' : '') +
+          '</span>'
+        );
+      }).join("");
+      attachSection = '<div class="item-attachments">' + chips + '</div>';
+    }
 
     return (
       '<div class="item-row" data-item-id="' + it.id + '">' +
@@ -1066,19 +1184,15 @@
         '</div>' +
         '<div class="item-meta-grid">' +
           '<div class="meta-block"><div class="k">DATA DE INÍCIO PARA SOLICITAÇÃO</div><div class="v">' + formatDate(it.availableDate) + '</div></div>' +
-          '<div class="meta-block"><div class="k">MEIO DE CONTATO</div><div class="v">' + contactBadge + '</div></div>' +
-          '<div class="meta-block"><div class="k">' + (it.contactMethod === "whatsapp" ? "NÚMERO" : "E-MAIL") + '</div><div class="v">' + escapeHtml(it.contactInfo || "—") + '</div></div>' +
+          '<div class="meta-block"><div class="k">CONTATO</div><div class="v"><div class="contact-badges">' + contactBadges + '</div></div></div>' +
+          contactDetails +
         '</div>' +
-        (effectiveTemplate
-          ? '<button class="item-template-toggle" data-action="toggle-template">Ver modelo de mensagem' + (usingFallback ? ' (padrão da categoria)' : '') + ' ▾</button>' +
-            '<div class="item-template-box">' + escapeHtml(effectiveTemplate) + '</div>'
-          : '<span style="font-size:12.5px;color:var(--muted);">Nenhum modelo de mensagem definido.</span>'
-        ) +
+        obsSection +
+        attachSection +
       '</div>'
     );
   }
 
-  /* ---------------- Month CRUD ---------------- */
   function openNewMonthModal(){
     var lastMonth = state.months[state.months.length - 1];
     var suggested = lastMonth && lastMonth.monthValue ? nextMonthValue(lastMonth.monthValue) : currentMonthValue();
@@ -1157,12 +1271,10 @@
     render();
   }
 
-  /* ---------------- Category CRUD ---------------- */
   function openNewCategoryModal(){
     editingCategoryId = null;
     document.getElementById("catModalTitle").textContent = "Nova categoria";
     document.getElementById("catNameInput").value = "";
-    document.getElementById("catTemplateInput").value = "";
     openModal("modalCategory");
     setTimeout(function(){ document.getElementById("catNameInput").focus(); }, 50);
   }
@@ -1173,21 +1285,19 @@
     editingCategoryId = catId;
     document.getElementById("catModalTitle").textContent = "Editar categoria";
     document.getElementById("catNameInput").value = cat.name;
-    document.getElementById("catTemplateInput").value = cat.template || "";
     openModal("modalCategory");
   }
 
   function saveCategoryFromModal(){
     var name = document.getElementById("catNameInput").value.trim();
-    var template = document.getElementById("catTemplateInput").value;
     if(!name){ document.getElementById("catNameInput").focus(); return; }
     var month = getActiveMonth();
 
     if(editingCategoryId){
       var cat = month.categories.find(function(c){ return c.id === editingCategoryId; });
-      if(cat){ cat.name = name; cat.template = template; }
+      if(cat){ cat.name = name; }
     } else {
-      var newCat = { id: uid(), name: name, template: template, items: [] };
+      var newCat = { id: uid(), name: name, items: [] };
       month.categories.push(newCat);
       ui.expanded[newCat.id] = true;
     }
@@ -1203,18 +1313,6 @@
     render();
   }
 
-  /* ---------------- Item CRUD ---------------- */
-  function setContactMethodUI(method){
-    var optWa = document.getElementById("optWhatsapp");
-    var optEm = document.getElementById("optEmail");
-    optWa.classList.toggle("selected", method === "whatsapp");
-    optEm.classList.toggle("selected", method === "email");
-    optWa.querySelector("input").checked = method === "whatsapp";
-    optEm.querySelector("input").checked = method === "email";
-    document.getElementById("itemContactLabel").textContent = method === "whatsapp" ? "Número de WhatsApp" : "Endereço de e-mail";
-    document.getElementById("itemContactInput").placeholder = method === "whatsapp" ? "(47) 9 9999-9999" : "contato@exemplo.com.br";
-  }
-
   function setRequestedToggleUI(val){
     var toggle = document.getElementById("itemRequestedToggle");
     var label = document.getElementById("itemRequestedLabel");
@@ -1224,15 +1322,37 @@
     label.className = "toggle-label " + (val ? "on" : "off");
   }
 
+  function renderPendingFiles(){
+    var list = document.getElementById("pendingFilesList");
+    if(pendingAttachments.length === 0){
+      list.innerHTML = "";
+      return;
+    }
+    list.innerHTML = pendingAttachments.map(function(att, idx){
+      var sizeStr = att.size ? formatFileSize(att.size) : "";
+      return (
+        '<div class="file-item">' +
+          '<span class="file-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>' +
+          '<span class="file-name">' + escapeHtml(att.name) + '</span>' +
+          '<span class="file-size">' + sizeStr + '</span>' +
+          '<button class="file-remove" data-action="remove-pending-file" data-file-idx="' + idx + '" title="Remover">&#10005;</button>' +
+        '</div>'
+      );
+    }).join("");
+  }
+
   function openNewItemModal(catId){
     editingItem = { categoryId: catId, itemId: null };
     document.getElementById("itemModalTitle").textContent = "Novo item";
     document.getElementById("itemNameInput").value = "";
     document.getElementById("itemDateInput").value = "";
-    document.getElementById("itemContactInput").value = "";
-    document.getElementById("itemTemplateInput").value = "";
-    setContactMethodUI("whatsapp");
+    document.getElementById("itemWhatsappInput").value = "";
+    document.getElementById("itemEmailInput").value = "";
+    document.getElementById("itemObservationInput").value = "";
+    document.getElementById("itemFilesInput").value = "";
+    pendingAttachments = [];
     setRequestedToggleUI(false);
+    renderPendingFiles();
     openModal("modalItem");
     setTimeout(function(){ document.getElementById("itemNameInput").focus(); }, 50);
   }
@@ -1246,10 +1366,13 @@
     document.getElementById("itemModalTitle").textContent = "Editar item";
     document.getElementById("itemNameInput").value = item.name;
     document.getElementById("itemDateInput").value = item.availableDate || "";
-    document.getElementById("itemContactInput").value = item.contactInfo || "";
-    document.getElementById("itemTemplateInput").value = item.template || "";
-    setContactMethodUI(item.contactMethod || "whatsapp");
+    document.getElementById("itemWhatsappInput").value = item.whatsappInfo || "";
+    document.getElementById("itemEmailInput").value = item.emailInfo || "";
+    document.getElementById("itemObservationInput").value = item.observation || "";
+    document.getElementById("itemFilesInput").value = "";
+    pendingAttachments = (item.attachments || []).map(function(f){ return { name: f.name, type: f.type, size: f.size, data: f.data }; });
     setRequestedToggleUI(!!item.requested);
+    renderPendingFiles();
     openModal("modalItem");
   }
 
@@ -1257,11 +1380,10 @@
     var name = document.getElementById("itemNameInput").value.trim();
     if(!name){ document.getElementById("itemNameInput").focus(); return; }
     var availableDate = document.getElementById("itemDateInput").value;
-    var contactInfo = document.getElementById("itemContactInput").value.trim();
-    var template = document.getElementById("itemTemplateInput").value;
+    var whatsappInfo = document.getElementById("itemWhatsappInput").value.trim();
+    var emailInfo = document.getElementById("itemEmailInput").value.trim();
+    var observation = document.getElementById("itemObservationInput").value;
     var requested = document.getElementById("itemRequestedToggle").dataset.value === "1";
-    var contactMethod = document.querySelector('input[name="contactMethod"]:checked');
-    contactMethod = contactMethod ? contactMethod.value : "whatsapp";
 
     var month = getActiveMonth();
     var cat = month.categories.find(function(c){ return c.id === editingItem.categoryId; });
@@ -1270,15 +1392,20 @@
     if(editingItem.itemId){
       var item = cat.items.find(function(i){ return i.id === editingItem.itemId; });
       if(item){
-        item.name = name; item.availableDate = availableDate; item.contactInfo = contactInfo;
-        item.template = template; item.requested = requested; item.contactMethod = contactMethod;
+        item.name = name; item.availableDate = availableDate;
+        item.whatsappInfo = whatsappInfo; item.emailInfo = emailInfo;
+        item.observation = observation; item.requested = requested;
+        item.attachments = pendingAttachments.slice();
       }
     } else {
       cat.items.push({
-        id: uid(), name: name, availableDate: availableDate, contactInfo: contactInfo,
-        template: template, requested: requested, contactMethod: contactMethod
+        id: uid(), name: name, availableDate: availableDate,
+        whatsappInfo: whatsappInfo, emailInfo: emailInfo,
+        observation: observation, requested: requested,
+        attachments: pendingAttachments.slice()
       });
     }
+    pendingAttachments = [];
     closeModal("modalItem");
     saveData();
     render();
@@ -1304,7 +1431,6 @@
     render();
   }
 
-  /* ---------------- Modal helpers ---------------- */
   function openModal(id){ document.getElementById(id).classList.add("show"); }
   function closeModal(id){ document.getElementById(id).classList.remove("show"); }
 
@@ -1315,7 +1441,34 @@
     openModal("modalConfirm");
   }
 
-  /* ---------------- Event wiring ---------------- */
+  function handleFileSelect(files){
+    for(var i = 0; i < files.length; i++){
+      var file = files[i];
+      var ext = file.name.split(".").pop().toLowerCase();
+      if(["xlsx","xls","csv","txt"].indexOf(ext) === -1){
+        alert('Arquivo "' + file.name + '" não é permitido. Use arquivos .xlsx, .xls, .csv ou .txt.');
+        continue;
+      }
+      if(file.size > MAX_FILE_SIZE){
+        alert('Arquivo "' + file.name + '" excede 2 MB (' + formatFileSize(file.size) + ').');
+        continue;
+      }
+      (function(f){
+        var reader = new FileReader();
+        reader.onload = function(e){
+          pendingAttachments.push({
+            name: f.name,
+            type: f.type || "application/octet-stream",
+            size: f.size,
+            data: e.target.result
+          });
+          renderPendingFiles();
+        };
+        reader.readAsDataURL(f);
+      })(file);
+    }
+  }
+
   document.addEventListener("click", function(e){
     var closeTarget = e.target.closest("[data-close-modal]");
     if(closeTarget){ closeModal(closeTarget.getAttribute("data-close-modal")); return; }
@@ -1400,25 +1553,34 @@
       toggleItemRequested(catCard.getAttribute("data-cat-id"), itemRow3.getAttribute("data-item-id"));
       return;
     }
-    if(action === "toggle-template"){
+    if(action === "download-attachment"){
       var itemRow4 = e.target.closest(".item-row");
-      itemRow4.classList.toggle("tpl-open");
+      var catId5 = catCard.getAttribute("data-cat-id");
+      var itemId5 = itemRow4.getAttribute("data-item-id");
+      var fileIdx = parseInt(actionEl.getAttribute("data-attach-idx"), 10);
+      var cat6 = getActiveMonth().categories.find(function(c){ return c.id === catId5; });
+      if(cat6){
+        var it6 = cat6.items.find(function(i){ return i.id === itemId5; });
+        if(it6 && it6.attachments && it6.attachments[fileIdx]){
+          downloadAttachment(it6.attachments[fileIdx]);
+        }
+      }
+      return;
+    }
+    if(action === "remove-pending-file"){
+      var rIdx = parseInt(actionEl.getAttribute("data-file-idx"), 10);
+      pendingAttachments.splice(rIdx, 1);
+      renderPendingFiles();
       return;
     }
   });
 
-  // Category template inline edit (blur to save)
-  document.addEventListener("focusout", function(e){
-    if(e.target.matches("[data-action='cat-template']")){
-      var catCard = e.target.closest(".cat-card");
-      var catId = catCard.getAttribute("data-cat-id");
-      var cat = getActiveMonth().categories.find(function(c){ return c.id === catId; });
-      if(cat){
-        cat.template = e.target.value;
-        saveData();
-      }
-    }
-  }, true);
+  var closeBannerBtn = document.getElementById("closeSetupBanner");
+  if(closeBannerBtn){
+    closeBannerBtn.addEventListener("click", function(){
+      document.getElementById("setupBanner").classList.remove("show");
+    });
+  }
 
   document.getElementById("btnNewCategory").addEventListener("click", openNewCategoryModal);
   document.getElementById("btnSaveCategory").addEventListener("click", saveCategoryFromModal);
@@ -1440,8 +1602,10 @@
     setRequestedToggleUI(!current);
   });
 
-  document.getElementById("optWhatsapp").addEventListener("click", function(){ setContactMethodUI("whatsapp"); });
-  document.getElementById("optEmail").addEventListener("click", function(){ setContactMethodUI("email"); });
+  document.getElementById("itemFilesInput").addEventListener("change", function(e){
+    handleFileSelect(e.target.files);
+    e.target.value = "";
+  });
 
   document.getElementById("searchInput").addEventListener("input", function(e){
     ui.search = e.target.value;
